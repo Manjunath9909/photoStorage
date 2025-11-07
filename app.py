@@ -4,31 +4,25 @@ from flask import render_template
 
 app = Flask(__name__)
 
-@app.route('/api/v1/movies')
-def moviesWeDo():
-    return {'movies':[{'id': 1, 'name': 'Tramsformers 1'}, {'id': 2, 'name': 'Tramsformers 2'}, {'id': 3, 'name': 'Tramsformers 3'}]}
+bigDictionaryOfMovies = {'movies':[{"Tramsformers 1", "Transformers 2", "Traosformers 4"}]}
 
 @app.route('/')
 def index():
-    return '<center> main page </center>'
+    #return render_template('index.html')
+    return bigDictionaryOfMovies['movies']
 
-@app.route('/api/v1/games')
+@app.route('/movies')
+def movies():
+    return render_template('viewmovies.html')
+
+@app.route('/addmovie')
+def addmovie():
+    return render_template('addmovie.html')
+
+@app.route('/games')
 def games():
-    return "doing somethign about games"
+    return render_template('viewmovies.html')
 
-@app.route('/api/v1/adverts')
-def adverts():
-    return "do something about adverts"
-
-@app.route('/api/v1/photoviewer')
-def photos():
-    return "do somethign about photos"
-
-@app.route('/api/v1/adduser/<int:id>')
-def adduser(id):
-    if id == 1:
-        return f"<center>Hello user {id}</center>"
-    elif id == 2:
-        return f"<center>Hello user {id}</center>"
-    else:
-        return f"<center>User {id} not found</center>"
+@app.route('/addgame')
+def addgame():
+    return render_template('viewmovies.html')
