@@ -1,4 +1,5 @@
 import time
+import json
 
 bigDictionaryOfMovies = {"movies":
                          [{"id": 1, "name" : "Transformers 1"},
@@ -13,4 +14,7 @@ len = bigDictionaryOfMovies['movies'].__len__()
 bigDictionaryOfMovies['movies'].append({"id" : len + 1, "name" : "Transformers 5"})
 
 print(bigDictionaryOfMovies['movies'])
+
+with open ("movies2.json", "w") as jsonFile:
+    json.dump(bigDictionaryOfMovies, jsonFile, indent=2)
 

@@ -1,0 +1,24 @@
+{
+  "movieList": [
+    {
+      "id": 1,
+      "name": "Return of the Jedi"
+    },
+    {
+      "id": 2,
+      "name": "Pokiri"
+    },
+    {
+      "id": 3,
+      "name": "A New Hope"
+    },
+    {
+      "id": 4,
+      "name": "Anaconda"
+    },
+    {
+      "id": 5,
+      "name": "Tanu weds manu"
+    }
+  ]
+}
