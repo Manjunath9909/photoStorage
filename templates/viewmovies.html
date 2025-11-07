@@ -4,7 +4,7 @@
         <title>Movies Page</title>
     </head>
     <body>
-        <h1>This is the list of all the movies we have!</h1><br>
+        <h1>This is the list of all the movies we have!</h1>
         <ul id="linklist">
             {%for movie in movies['movieList']:%}
                 <li>Movie ID: {{movie['id']}} <br> Movie: {{movie['name']}}</li><br>

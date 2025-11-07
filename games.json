@@ -1,0 +1,19 @@
+{
+  "gameList": [
+    {
+      "id": 1,
+      "name": "Warframe",
+      "link": "https://store.steampowered.com/app/230410/Warframe/"
+    },
+    {
+      "id": 2,
+      "name": "Far Cry Three",
+      "link": "https://store.steampowered.com/app/220240/Far_Cry_3/"
+    },
+    {
+      "id": 3,
+      "name": "Engine Fall",
+      "link": "https://store.steampowered.com/app/2437390/Enginefall/"
+    }
+  ]
+}

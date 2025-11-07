@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Games Page</title>
+    </head>
+    <body>
+        <h1>This is the list of all the Games we have!</h1>
+        <ul id="linklist">
+            {%for game in games['gameList']:%}
+                <li>Game ID: {{game['id']}} <br> Game: {{game['name']}} <br> Link: <a href= "{{game['link']}}"> {{game['name']}} on Steam </a></li><br>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

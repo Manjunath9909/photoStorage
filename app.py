@@ -7,8 +7,6 @@ import json
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -25,6 +23,7 @@ def addmovie():
         with open("movies.json", "r") as file:
             bigDictionaryOfMovies = json.load(file)
         len = bigDictionaryOfMovies['movieList'].__len__()
+
         bigDictionaryOfMovies['movieList'].append({"id" : len + 1, "name" : request.form['movie']})
         with open("movies.json", "w") as file:
             json.dump(bigDictionaryOfMovies, file, indent=2)
@@ -35,12 +34,24 @@ def addmovie():
     
 @app.route('/games')
 def games():
+    with open("games.json", "r") as file:
+        bigDictionaryOfGames = json.load(file)
+    return render_template('viewgames.html', games = bigDictionaryOfGames)
 
-    return render_template('viewmovies.html')
-
-@app.route('/addgame')
+@app.route('/addgame', methods = ['POST', 'GET'])
 def addgame():
-    return render_template('viewmovies.html')
+    if request.method == 'POST':
+        with open("games.json", "r") as file:
+            bigDictionaryOfGames = json.load(file)
+        len = bigDictionaryOfGames['gameList'].__len__()
+
+        bigDictionaryOfGames['gameList'].append({"id": len + 1, "name": request.form['game'], "link": request.form['link']})
+        with open("games.json", "w") as file:
+            json.dump(bigDictionaryOfGames, file, indent=2)
+
+        return render_template('index.html')
+    else:
+        return render_template('addgame.html')
 
 #with app.test_request_context():
     print(url_for('index'))
